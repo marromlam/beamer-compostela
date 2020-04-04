@@ -1,0 +1,246 @@
+\mode<presentation>
+
+\setbeamertemplate{sections/subsections in toc}[circle]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.1em\inserttocsubsection\par}
+
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setlength{\leftmargini}{0.5cm}
+\setlength{\leftmarginii}{0.5cm}
+
+
+% Rounded boxes & no shadow & no blurr
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(lower.bg); color(4pt)=(lower.bg); color(4pt)=(upper.bg)}
+\makeatother
+
+% \renewenvironment<>{exampleblock}[1]{%
+%   \setbeamercolor{exampleblock body}{bg=compostelamarroon!20}
+%   \setbeamercolor{exampleblock title}{bg=compostelamarroon, fg=white}
+%   \begin{block}#2{#1}}{\end{block}}
+
+
+% Allow multi-slide frames
+\setbeamertemplate{frametitle continuation}{}
+
+% Horizontal separator
+\setbeamertemplate{separator}{%
+    \usebeamercolor{separator}%
+    \textcolor{fg}{\rule{.7\textwidth}{.0pt}}%
+}
+
+% Separate authors with newlines
+%\renewcommand{\beamer@andtitle}{\\}
+
+% Title page. If you want to add a background image on the title slide,
+% use the \background command to set the path to that image. Otherwise,
+% no image will be included
+\RequirePackage{tikz}
+
+
+% \usetikzlibrary{fadings}
+% \newcommand{\background}[1]%
+%     {\newcommand{\compostela@background}{#1}}
+%
+% \tikzfading[
+%     name=title page picture fading,
+%     left color=transparent!0,
+%     right color=transparent!100,
+% ]
+
+\setbeamertemplate{title page}{%
+  \begin{minipage}{.7\textwidth}
+    \raggedright
+    \usebeamerfont{title}
+    \inserttitle
+
+    \usebeamerfont{author}
+    \vspace{2em}
+    \insertauthor
+
+    \vspace{2em}
+    \usebeamerfont{details}
+    \insertinstitute
+
+    \textsc{\TalkPlace}, \TalkDate
+  \end{minipage}
+}
+
+
+
+
+
+
+
+
+
+
+
+\makeatletter
+\define@key{beamerframe}{standard}[true]{%
+  %
+}
+
+
+
+\define@key{beamerframe}{default}[true]%
+{
+  \setbeamertemplate{background}{}
+  \setbeamertemplate{background canvas}{}
+}
+
+
+
+\define@key{beamerframe}{backgroundpicture}%
+{%
+\setbeamertemplate{background canvas}{%
+  \begin{tikzpicture}[overlay, remember picture]
+    % Include background image
+    \node[anchor=south east, inner sep=0, outer sep=0 ] at (current page.south east)
+    {
+      \includegraphics[height=\paperheight] {#1}
+    };
+    % \fill[color=white,fill opacity=#2] (current page.north west)
+    %   -- (current page.south west)
+    %   -- (current page.south east)
+    %   -- (current page.north east)
+    %   -- cycle;
+  \end{tikzpicture}%
+}
+}
+
+
+
+
+
+
+\define@key{beamerframe}{overlayfull}%
+{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      % Include background image
+      \fill[color=white,fill opacity=#1] (current page.north west)
+        -- (current page.south west)
+        -- (current page.south east)
+        -- (current page.north east);
+    \end{tikzpicture}%
+  }
+}
+
+
+
+
+
+
+\define@key{beamerframe}{overlayslantedleft}%
+{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      % Include background image
+      \fill[color=white,fill opacity=#1] (current page.north west)
+        -- (current page.south west)
+        -- ++(5.1, 0)
+        -- ++(3, \paperheight)
+        -- cycle;
+    \end{tikzpicture}%
+  }
+}
+
+
+\define@key{beamerframe}{overlayslantedright}%
+{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      % Include background image
+      \fill[color=white,fill opacity=#1] (current page.south east)
+        -- (current page.north east)
+        -- ++(-5.1, 0)
+        -- ++(-3, -\paperheight)
+        -- cycle;
+    \end{tikzpicture}%
+  }
+}
+
+
+
+\define@key{beamerframe}{overlaytitlepage}%
+{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      % Include background image
+      \fill[color=white,fill opacity=#1] (current page.north west)
+        -- (current page.south west)
+        -- ++(5.1, 0)
+        -- ++(3, \paperheight)
+        -- cycle;
+    \end{tikzpicture}%
+
+  \hspace*{7mm}\begin{minipage}[t][\textheight][c]{.7\textwidth}
+    \raggedright
+    \usebeamerfont{title}
+    \TalkTitle
+
+    \usebeamerfont{author}
+    \vspace{2em}
+    \TalkAuthor \\ \TalkInstitute
+
+    \vspace{2em}
+    \usebeamerfont{details}
+    \textsc{\TalkPlace}, \TalkDate
+
+  \end{minipage}
+  }
+}
+
+
+
+\define@key{beamerframe}{overlaytoc}%
+{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[color=white,fill opacity=#1] (current page.north west)
+        -- (current page.south west)
+        -- ++(5.1, 0)
+        -- ++(3, \paperheight)
+        -- cycle;
+      \fill[color=white,fill opacity=1] (current page.north west)
+        -- (current page.south west)
+        -- ++(5.1, 0)
+        -- ++(3, \paperheight)
+        -- (current page.north east)
+        -- (current page.south east)
+        -- (current page.south west);
+    \end{tikzpicture}%
+
+    \hspace*{7mm}\begin{minipage}[t][\textheight][c]{.7\textwidth}
+      \raggedright
+      \usebeamerfont{title}
+      \TalkTitle
+
+      \usebeamerfont{author}
+      \vspace{2em}
+      \TalkAuthor \\ \TalkInstitute
+
+      \vspace{2em}
+      \usebeamerfont{details}
+      \textsc{\TalkPlace}, \TalkDate
+
+    \end{minipage}
+  }
+}
+
+
+
+
+% Default framestyle
+\pretocmd{\beamer@@@@frame}
+{
+	%
+}
+{}{}
+\makeatother
+
+\mode<all>

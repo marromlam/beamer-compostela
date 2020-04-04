@@ -1,0 +1,273 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Compostela}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Talk Configuration %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\TalkPlace}{Santiago de Compostela}
+\newcommand{\TalkAuthor}{Bernal de Bonaval}
+\newcommand{\TalkAuthorShort}{Bernal de Bonaval}
+\newcommand{\TalkTitle}{The great city of \\ \large {\fontspec{Zapfino} Santiago de Compostela}}
+\newcommand{\TalkTitleShort}{The great city of Santiago de Compostela}
+\newcommand{\TalkInstitute}{The Court of Alfonso X 'The Wise'}
+\newcommand{\TalkDate}{February 30th}
+\newcommand{\TalkDateNumber}{2020/02/30}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%\newcommand\hmmax{0}
+%\newcommand\bmmax{0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TITLE PAGE & CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain,backgroundpicture=fig/scq_alameda,overlaytitlepage=0.9]
+  % LOGOS GO HERE!
+  \begin{minipage}[b][\textheight][b]{5cm}
+    \includegraphics[height=1cm]{logos/alfonsoX_signum_reg}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}[plain,backgroundpicture=fig/scq_alameda,overlaytoc=0.9]
+  \addtocounter{framenumber}{-1}
+  \hspace*{7.3cm}\begin{minipage}{8cm}
+    \tableofcontents
+  \end{minipage}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\section{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[backgroundpicture=fig/scq_map_street]
+\frametitle{nosubsection}
+
+\begin{columns}
+  \begin{column}{0.34\textwidth}
+    Placed in Northwestern Spain, Santiago de Compostela is the capital city of Galicia.
+    The city has its origin in the shrine of Saint James the Great, now the Cathedral of Santiago de Compostela, as the destination of the Way of St. James, a leading Catholic pilgrimage route since the 9th century.\\[5mm]
+    It has about 100 000 inhabitants spread over 220 km${}^2$
+    and in 1985, the city's Old Town was designated a UNESCO World Heritage Site.
+  \end{column}
+  \hspace*{9.5cm}
+\end{columns}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Great city, awesome beamer theme}
+\subsection{Motivation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[default, allowframebreaks]
+\frametitle{noframetitle}
+
+Beamer themes are named after some well--known city, and I thought Santiago
+deserves one among the best. And here it is!
+
+\begin{itemize}
+  \item This theme is built on top of basic latex \texttt{.sty} files that should be compiled with XeLaTeX.
+  \item It should be quite easy to customize.
+  \item Its main font is Fira Sans, so it must be installed beforehand.
+  \item ...
+\end{itemize}
+
+
+
+
+Hey there!
+\begin{block}{Quote}
+Ever loved someone so much, you would do anything for them? Yeah, well make that someone yourself and do whatever the hell you want
+\end{block}
+\begin{block}{Quote}
+Ever loved someone so much, you would do anything for them? Yeah, well make that someone yourself and do whatever the hell you want
+\end{block}
+
+\begin{enumerate}
+  \item This is an item.
+  \item Is this another one?
+\end{enumerate}
+
+\begin{itemize}
+  \item This is an item.
+  \item Is this another one?
+\end{itemize}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\section{Delightful options}
+
+
+\subsection{Options with backrounds}
+% ------------------------------------------------------------------------------
+\begin{frame}[backgroundpicture=fig/scq_berenguela,overlayfull=0.7]
+\frametitle{noframetitle}
+\framesubtitle{background + dimmed background}
+
+\texttt{%
+\textbackslash begin\{frame\}[backgroundpicture=fig/scq\_berenguela,overlayfull=0.7]\\%
+\textbackslash frametitle\{noframetitle\}\\
+\textbackslash framesubtitle\{background + dimmed background\}\\
+\textbackslash end\{frame\}%
+}
+
+\end{frame}
+% ------------------------------------------------------------------------------
+
+
+
+% ------------------------------------------------------------------------------
+\begin{frame}[backgroundpicture=fig/scq_berenguela,overlayslantedleft=0.7]
+\frametitle{noframetitle}
+\framesubtitle{background + semi dimmed background left}
+
+\texttt{%
+\textbackslash begin\{frame\}[backgroundpicture=fig/scq\_berenguela,overlayslantedleft=0.7]\\%
+\textbackslash frametitle\{noframetitle\}\\
+\textbackslash framesubtitle\{background + dimmed background\}\\
+\textbackslash end\{frame\}%
+}
+
+\end{frame}
+% ------------------------------------------------------------------------------
+
+
+
+% ------------------------------------------------------------------------------
+\begin{frame}[backgroundpicture=fig/scq_berenguela,overlayslantedright=0.7]
+\frametitle{noframetitle}
+\framesubtitle{background + semi dimmed background right}
+
+\texttt{%
+\textbackslash begin\{frame\}[backgroundpicture=fig/scq\_berenguela,overlayslantedright=0.7]\\%
+\textbackslash frametitle\{noframetitle\}\\
+\textbackslash framesubtitle\{background + dimmed background\}\\
+\textbackslash end\{frame\}%
+}
+
+\end{frame}
+% ------------------------------------------------------------------------------
+
+
+
+% ------------------------------------------------------------------------------
+\begin{frame}[plain, default, backgroundpicture=fig/scq_berenguela]
+%\frametitle{noframetitle}
+%\framesubtitle{background}
+
+
+\end{frame}
+% ------------------------------------------------------------------------------
+
+
+
+
+\subsection{Options with frametitles}
+% ------------------------------------------------------------------------------
+\begin{frame}[default]
+\frametitle{noframetitle}
+\vspace*{-0.6cm}
+\begin{columns}[t]
+  \begin{column}{0.48\textwidth}
+    \begin{block}{Section}
+      \texttt{%
+      \textbackslash begin\{frame\}\\%
+      \textbackslash frametitle\{nosubsection\}\\
+      CONTENTS\\%
+      \textbackslash end\{frame\}%
+      }\\
+      like slide Introduction.
+    \end{block}
+    \begin{block}{Section + subsection + frametitle}
+      \texttt{%
+      \textbackslash begin\{frame\}\\%
+      \textbackslash frametitle\{text\}\\
+      CONTENTS\\%
+      \textbackslash end\{frame\}%
+      }\\
+      like slide BLA.
+    \end{block}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \begin{block}{Section + subsection}
+      \texttt{%
+      \textbackslash begin\{frame\}\\%
+      \textbackslash frametitle\{noframetitle\}\\
+      CONTENTS\\%
+      \textbackslash end\{frame\}%
+      }\\
+      like this slide.
+    \end{block}
+    \begin{alertblock}{Section + subsection + frametitle + framesubtitle}
+      \texttt{%
+      \textbackslash begin\{frame\}\\%
+      \textbackslash frametitle\{text\}\\
+      \textbackslash framesubtitle\{text\}\\
+      CONTENTS\\%
+      \textbackslash end\{frame\}%
+      }\\
+      which I find quite overwhelming.
+    \end{alertblock}
+  \end{column}
+\end{columns}
+
+\end{frame}
+% ------------------------------------------------------------------------------
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

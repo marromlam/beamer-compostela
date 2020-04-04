@@ -1,0 +1,58 @@
+\mode<presentation>
+
+% Normal slide header
+\def\stringpleasehidethistitleA{{noframetitle\ifnum\beamer@autobreakcount>0\relax{}\space\usebeamertemplate*{frametitle continuation}\fi}}
+\def\stringpleasehidethistitleB{{nosubsection\ifnum\beamer@autobreakcount>0\relax{}\space\usebeamertemplate*{frametitle continuation}\fi}}
+
+\makeatletter
+\setbeamertemplate{frametitle}{
+  %\vskip1em\par
+  \ifx\insertframetitle\stringpleasehidethistitleB%
+    {\color{compostelalightgray}\usebeamerfont{framesubtitle}\phantom{\insertsection}}\\[-2mm]
+    {\color{compostelaback}\usebeamerfont{frametitle}\insertsection\par
+    \usebeamerfont{framesubtitle}\insertframesubtitle\par}
+  \else\ifx\insertframetitle\stringpleasehidethistitleA%
+    {\color{compostelalightgray}\usebeamerfont{framesubtitle}\insertsection}\\[-2mm]
+    {\color{compostelaback}\usebeamerfont{frametitle}\insertsubsection\par
+    \usebeamerfont{framesubtitle}\insertframesubtitle\par}
+  \else%
+    {\color{compostelalightgray}\usebeamerfont{framesubtitle}\insertsection}\\[-2mm]
+    {\color{compostelaback}\usebeamerfont{frametitle}\insertsubsection:
+    \usebeamerfont{frametitle}\insertframetitle\par
+    \usebeamerfont{framesubtitle}\insertframesubtitle\par}
+  \fi\fi%
+}
+\makeatother
+
+% Remove useless navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=7mm, text margin right=7mm}
+
+% Remove header line that distract from actual slide content
+\setbeamertemplate{headline}{}
+
+% Footer information line with title, author and slide number
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \usebeamerfont{footline}%
+        \begin{beamercolorbox}[
+            wd=\textwidth,
+            ht=3ex,
+            dp=1.25ex,
+        ]{footline}%
+            \hspace{0.5cm}%
+            { {\scshape\TalkPlace}: \TalkTitleShort}%
+            \hfill%
+            %\insertshortauthor%
+            \hspace{2em}%
+            \insertframenumber{} / \inserttotalframenumber%
+            \hspace{0.5cm}
+        \end{beamercolorbox}%
+    }
+    \vskip0pt%
+}
+
+
+
+\mode<all>

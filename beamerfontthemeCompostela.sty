@@ -1,0 +1,69 @@
+\mode<presentation>
+
+\RequirePackage{fontspec}
+
+%\usepackage{sansmathfonts}
+\usepackage{cmbright}
+\usepackage[scale=0.2]{inconsolata}
+\usepackage[sfdefault,scaled=0.8,lf]{FiraSans}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\setmonofont{inconsolata}
+
+
+
+% \setsansfont[
+%   Scale=0.8,
+%   Ligatures=TeX,
+%   BoldFont={* Bold},
+% ]{Fira Sans}
+
+
+
+% Title page
+\setbeamerfont{title}{
+  size=\huge,
+  shape=\bfseries\boldmath
+}
+
+\setbeamerfont{subtitle}{
+  size=\large,
+  shape=\normalfont
+}
+
+\setbeamerfont{author}{
+  size=\footnotesize,
+  shape=\normalfont
+}
+
+\setbeamerfont{details}{
+  size=\footnotesize,
+  shape=\normalfont
+}
+
+% Slide title
+\setbeamerfont{frametitle}{
+  size=\Large,
+  shape=\bfseries\boldmath
+}
+\setbeamerfont{framesubtitle}{
+  size=\large,
+  shape=\bfseries\boldmath
+}
+
+% Blocks
+\setbeamerfont{block title}{
+  size=\normalfont,
+  shape=\centering\bfseries\boldmath
+}
+
+\setbeamerfont{blockdef}{
+  size=\large,
+  shape=\bfseries
+}
+
+% Description
+\setbeamerfont{description item}{
+  shape=\bfseries
+}
+
+\mode<all>

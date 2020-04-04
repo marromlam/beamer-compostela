@@ -1,0 +1,28 @@
+%% compostela Beamer theme — Version 1.0
+%% A lightweight Beamer theme inspired from the Metropolis theme
+
+
+\mode<presentation>
+
+\usecolortheme{Compostela}
+\usefonttheme{Compostela}
+\useinnertheme{Compostela}
+\useoutertheme{Compostela}
+
+% \title[\TalkTitle]{\TalkTitle}
+% \author[\TalkAuthorShort]{\TalkAuthor}
+% \institute{\TalkInstitute}
+% \date{\TalkDate}
+
+\AtBeginSection[]
+{
+   \addtocounter{framenumber}{-1}
+   \frame[plain, default]
+   {
+      \vfill
+      \centering\Large\bfseries\boldmath\color{black}\secname
+      \vfill
+   }
+}
+
+\mode<all>
