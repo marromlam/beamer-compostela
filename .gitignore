@@ -1,0 +1,6 @@
+*.nav
+*.snm
+*.xdv
+
+.DS_Store
+._.DS_Store
