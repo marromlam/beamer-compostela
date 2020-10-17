@@ -2,6 +2,11 @@
 
 \setbeamertemplate{sections/subsections in toc}[circle]
 \setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.1em\inserttocsubsection\par}
+%\defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+
+
+\let\olditem=\item%
+\renewcommand{\item}{\color{compostelamain} \olditem}%
 
 \setbeamertemplate{itemize item}[circle]
 \setbeamertemplate{itemize subitem}[circle]
@@ -17,8 +22,8 @@
   color(0pt)=(lower.bg); color(4pt)=(lower.bg); color(4pt)=(upper.bg)}
 \makeatother
 
-\let\olditem=\item%
-\renewcommand{\item}{\olditem \color{compostelamain}}%
+%\let\olditem=\item%
+%\renewcommand{\item}{\olditem \color{compostelamain}}%
 %
 
 % \renewenvironment<>{exampleblock}[1]{%
